@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""makeChange function"""
+
+""" MakeChange fyc"""
 
 
-def make_change(coins, total):
+def makeChange(coins, total):
     """
     Calculates minimum coins needed for a total.
     Returns: coin count or -1 if impossible.
@@ -12,11 +13,11 @@ def make_change(coins, total):
     if total <= 0:
         return 0
     var = 0
-    coins = sorted(coins, reverse=True)
+    coins = sorted(coins)[::-1]
     for coin in coins:
         while coin <= total:
             total -= coin
             var += 1
-        if total == 0:
+        if (total == 0):
             return var
     return -1
